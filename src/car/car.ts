@@ -7,5 +7,7 @@ export class Car {
     serviceDate: string;
     regNumber: string;
     owner: string;
+    fuel: string;
+    phone: string;
 }
 
