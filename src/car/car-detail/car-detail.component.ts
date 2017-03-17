@@ -15,7 +15,9 @@ export class CarDetailComponent implements OnInit {
     regNumber: 'BIA666',
     serviceDate: '16-03-2017',
     year: '2004',
-    owner: 'Wojciech M'
+    owner: 'Wojciech M',
+    fuel: 'diesel',
+    phone: '513555233'
   };
   constructor() { }
 
