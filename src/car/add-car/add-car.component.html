@@ -35,9 +35,22 @@
   </div>
 </div>
 <div>
+  <label>Paliwo: </label>
+  <div>
+    <input [(ngModel)]="car.fuel" placeholder="car">
+  </div>
+</div>
+<div>
+  <label>Numer Telefonu: </label>
+  <div>
+    <input [(ngModel)]="car.phone" placeholder="car">
+  </div>
+</div>
+<div>
   <label>Wlasciciel: </label>
   <div>
     <input [(ngModel)]="car.owner" placeholder="car">
   </div>
-  <div><button>Dodaj</button></div>
+
 </div>
+<div><button (click)="add()">Dodaj</button></div>

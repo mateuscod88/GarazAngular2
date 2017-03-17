@@ -15,14 +15,22 @@ export class CarListComponent implements OnInit {
   ngOnInit() {
   }
   selectCar(car: Car) {
+    console.log('selectedCarr');
     this.selectedCar = car;
+
   }
   selectAddCar() {
+    console.log('selectedCarr');
     if (this.addCar === 0) {
       this.addCar = 1;
     }
     else {
       this.addCar = 0;
     }
+  }
+  addCarHandle(car: Car) {
+    console.log('addCarhandler');
+    console.log(car);
+    this.cars.push(car);
   }
 }
