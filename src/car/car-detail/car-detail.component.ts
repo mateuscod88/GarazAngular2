@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Car } from '../car';
 
 @Component({
@@ -19,6 +19,8 @@ export class CarDetailComponent implements OnInit {
     fuel: 'diesel',
     phone: '513555233'
   };
+  @Input() car: Car;
+
   constructor() { }
 
   ngOnInit() {

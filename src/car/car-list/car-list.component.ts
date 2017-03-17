@@ -7,13 +7,22 @@ import { Car } from '../car';
   styleUrls: ['./car-list.component.css']
 })
 export class CarListComponent implements OnInit {
-  selectedCar: number;
+  selectedCar: Car;
+  addCar = 0;
   cars: Car[] = CARS;
   constructor() { }
 
   ngOnInit() {
   }
   selectCar(car: Car) {
-    this.selectedCar = car.id;
+    this.selectedCar = car;
+  }
+  selectAddCar() {
+    if (this.addCar === 0) {
+      this.addCar = 1;
+    }
+    else {
+      this.addCar = 0;
+    }
   }
 }

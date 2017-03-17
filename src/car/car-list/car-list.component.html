@@ -14,7 +14,7 @@
     <th>Numer Tel.</th>
   </tr>
 
-  <tr *ngFor="let car of cars">
+  <tr *ngFor="let car of cars" [ngClass]="{ active: (selectedCar && car.id === selectedCar.id) }" (click)="selectCar(car)">
     <td>{{car.model}}</td>
     <td>{{car.brand}}</td>
     <td>{{car.year}}</td>
@@ -25,7 +25,11 @@
     <td>{{car.owner}}</td>
     <td>{{car.phone}}</td>
   </tr>
-
+  <div>
+    <button (click)="selectAddCar()">Dodaj Auto</button>
+  </div>
+  <app-car-detail *ngIf="selectedCar" [car]="selectedCar"></app-car-detail>
+  <app-add-car *ngIf="addCar == 1"></app-add-car>
 
 
 
