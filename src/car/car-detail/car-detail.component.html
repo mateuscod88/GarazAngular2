@@ -39,3 +39,7 @@
     <input [(ngModel)]="car.owner" placeholder="car">
   </div>
 </div>
+  <div>
+    <button (click)="showRepairs()">Pokaz Naprawy</button>
+  </div>
+  <app-repair-list *ngIf = "repairsVisible == true" ></app-repair-list>

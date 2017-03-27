@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CARS } from '../car.mock';
 import { Car } from '../car';
+import {CarService} from '../car.service';
 @Component({
   selector: 'app-car-list',
   templateUrl: './car-list.component.html',
@@ -9,11 +10,14 @@ import { Car } from '../car';
 export class CarListComponent implements OnInit {
   selectedCar: Car;
   addCar = 0;
-  cars: Car[] = CARS;
-  constructor() { }
+  cars: Car[] ;
+  constructor(private carService: CarService) { }
 
   ngOnInit() {
-  }
+     console.log('laduj fury');
+     this.carService.getCars().then(cars => this.cars = cars);
+     console.log('zaladowal fury');  
+}
   selectCar(car: Car) {
     console.log('selectedCarr');
     this.selectedCar = car;

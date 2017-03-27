@@ -7,6 +7,7 @@ import { Car } from '../car';
   styleUrls: ['./car-detail.component.css']
 })
 export class CarDetailComponent implements OnInit {
+  repairsVisible:  boolean = false;
   carAudi: Car = {
     id: 1,
     brand: 'Audi',
@@ -24,6 +25,16 @@ export class CarDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+  showRepairs()
+  {
+    if(this.repairsVisible == false)
+    {
+      this.repairsVisible = true;
+    }
+    else{
+      this.repairsVisible = false;
+    }
   }
 
 }

@@ -5,15 +5,22 @@ import { CarListComponent } from '../car/car-list/car-list.component';
 import { AddCarComponent } from '../car/add-car/add-car.component';
 import { FormsModule } from '@angular/forms';
 import { Car } from './car';
+import {CarService} from './car.service';
+import {RepairsModule} from '../repairs/repairs.module';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RepairsModule
   ],
   exports: [
     CarDetailComponent,
     CarListComponent,
     AddCarComponent
+  ],
+  providers:
+  [
+    CarService
   ]
   ,
   declarations: [
