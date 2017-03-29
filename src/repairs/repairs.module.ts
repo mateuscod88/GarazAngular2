@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RepairDetailsComponent } from './repair-details/repair-details.component';
 import { RepairListComponent } from './repair-list/repair-list.component';
 import { RepairAddComponent } from './repair-add/repair-add.component';
+import { RepairService } from './repair.service';
 
 
 @NgModule({
@@ -13,6 +14,9 @@ import { RepairAddComponent } from './repair-add/repair-add.component';
     RepairDetailsComponent,
     RepairListComponent,
     RepairAddComponent
+  ],
+  providers: [
+    RepairService
   ],
   exports: [
     RepairAddComponent,
