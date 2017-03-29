@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { Car } from '../car';
 
 @Component({
@@ -7,7 +7,7 @@ import { Car } from '../car';
   styleUrls: ['./car-detail.component.css']
 })
 export class CarDetailComponent implements OnInit {
-  repairsVisible:  boolean = false;
+  repairsVisible: boolean = false;
   carAudi: Car = {
     id: 1,
     brand: 'Audi',
@@ -26,15 +26,18 @@ export class CarDetailComponent implements OnInit {
 
   ngOnInit() {
   }
-  showRepairs()
-  {
-    if(this.repairsVisible == false)
-    {
+  showRepairs() {
+    if (this.repairsVisible == false) {
       this.repairsVisible = true;
     }
-    else{
+    else {
       this.repairsVisible = false;
     }
   }
+  selectCarHandlee(carId: number) {
+    console.log('HandleInCarDetail');
+
+  }
+
 
 }

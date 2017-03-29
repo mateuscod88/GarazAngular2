@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { NgModule, OnChanges } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
 import { RepairDetailsComponent } from './repair-details/repair-details.component';
 import { RepairListComponent } from './repair-list/repair-list.component';

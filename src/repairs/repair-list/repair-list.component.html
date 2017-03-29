@@ -1,16 +1,18 @@
-<table>
-  <tr>
-    <th>Nazwa Naprawy</th>
-    <th>Data Naprawy</th>
+<div ()>
+  <table>
+    <tr>
+      <th>Nazwa Naprawy</th>
+      <th>Data Naprawy</th>
 
-  </tr>
+    </tr>
 
-  <tr *ngFor="let repair of repairs" [ngClass]="{ active: (selectedRepair && repair.id === selectedRepair.id) }" (click)="selectRepair(repair)">
-    <td>{{repair.name}}</td>
-    <td>{{repair.date}}</td>
-  </tr>
-
-
+    <tr *ngFor="let repair of repairs" [ngClass]="{ active: (selectedRepair && repair.id === selectedRepair.id) }" (click)="selectRepair(repair)">
+      <td>{{repair.name}}</td>
+      <td>{{repair.date}}</td>
+    </tr>
 
 
-</table>
+
+
+  </table>
+</div>
