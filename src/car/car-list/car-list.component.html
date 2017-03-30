@@ -25,12 +25,13 @@
     <td>{{car.owner}}</td>
     <td>{{car.phone}}</td>
   </tr>
-  <div>
-    <button (click)="selectAddCar()">Dodaj Auto</button>
-  </div>
-  <app-car-detail *ngIf="selectedCar" [car]="selectedCar"></app-car-detail>
-  <app-add-car *ngIf="addCar == 1" (addNewCarEvent)="addCarHandle($event)"></app-add-car>
+
 
 
 
 </table>
+<div>
+  <button (click)="selectAddCar()">Dodaj Auto</button>
+</div>
+<app-car-detail *ngIf="selectedCar" [car]="selectedCar"></app-car-detail>
+<app-add-car *ngIf="addCar == 1" (addNewCarEvent)="addCarHandle($event)"></app-add-car>

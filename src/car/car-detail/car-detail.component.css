@@ -5,6 +5,7 @@
 }
 
 .carDetails {
+    display: inline-block;
     width: 100%;
     border: 3px solid #73AD21;
     background-color:aliceblue;
