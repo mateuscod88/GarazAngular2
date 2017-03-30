@@ -1,0 +1,11 @@
+#repairList{
+    width: 100%;
+    border: 3px solid #334441;
+    padding: 10px;
+}
+
+.carDetails {
+    width: 100%;
+    border: 3px solid #73AD21;
+    background-color:aliceblue;
+    }

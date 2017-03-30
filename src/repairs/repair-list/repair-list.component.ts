@@ -10,19 +10,30 @@ import { Repair } from '../repair';
 export class RepairListComponent implements OnInit, OnChanges {
   repairs: Repair[];
   selectedRepair: Repair;
-  constructor(private repairService: RepairService) { }
+  constructor(private repairService: RepairService) { console.log('konstruktor'); }
+
   @Input() id: number;
   ngOnInit() {
+    console.log('Repairlist');
     this.repairService.getRepairsByCarId(this.id).then(repair => this.repairs = repair);
-
   }
   ngOnChanges(changes: SimpleChanges) {
+    console.log('change');
+    var tempCar;
     for (let propName in changes) {
       let chng = changes[propName];
       let cur = JSON.stringify(chng.currentValue);
       let prev = JSON.stringify(chng.previousValue);
-      console.log(cur.toString());
+      tempCar = cur;
+
     }
+    let carRepId = +tempCar;
+    if (Number.isInteger(carRepId)) {
+      this.repairService.getRepairsByCarId(carRepId).then(repair => this.repairs = repair);
+    }
+
+    console.log('end onCh');
+
   }
   selectRepair(selRepair: Repair) {
     if (!(this.selectedRepair.id === selRepair.id)) {

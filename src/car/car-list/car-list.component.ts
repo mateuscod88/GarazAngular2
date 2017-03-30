@@ -12,7 +12,7 @@ export class CarListComponent implements OnInit {
   addCar = 0;
   cars: Car[];
   constructor(private carService: CarService) { }
-  @Output() selectCarEmiter = new EventEmitter<number>();
+
   ngOnInit() {
     console.log('laduj fury');
     this.carService.getCars().then(cars => this.cars = cars);
@@ -22,7 +22,7 @@ export class CarListComponent implements OnInit {
     console.log('selectedCarr');
     this.selectedCar = car;
     console.log(this.selectedCar.id.toString());
-    this.selectCarEmiter.emit(this.selectedCar.id);
+
   }
   selectAddCar() {
     console.log('selectedCarr');

@@ -25,19 +25,19 @@ export class CarDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.car.id.toString());
   }
   showRepairs() {
-    if (this.repairsVisible == false) {
+    if (this.repairsVisible === false) {
       this.repairsVisible = true;
     }
     else {
       this.repairsVisible = false;
     }
+    console.log(this.repairsVisible);
+    console.log(this.car.id);
   }
-  selectCarHandlee(carId: number) {
-    console.log('HandleInCarDetail');
 
-  }
 
 
 }

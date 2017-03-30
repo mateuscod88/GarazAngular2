@@ -1,45 +1,52 @@
 <div>
-  <label>Marka:  {{car.brand}}</label>
-  <input [(ngModel)]="car.brand" placeholder="car">
+  <div class="carDetails">
+    <div>
+      <label>Marka:  </label>
+      <div>
+        <input [(ngModel)]="car.brand" placeholder="car">
+      </div>
+    </div>
+    <div>
+      <label>Model: </label>
+      <div>
+        <input [(ngModel)]="car.model" placeholder="car">
+      </div>
+    </div>
+    <div>
+      <label>Silnik:</label>
+      <div>
+        <input [(ngModel)]="car.engine" placeholder="car">
+      </div>
+    </div>
+    <div>
+      <label>Rok Produkcji: </label>
+      <div>
+        <input [(ngModel)]="car.year" placeholder="car">
+      </div>
+    </div>
+    <div>
+      <label>Data Badania Technicznego: </label>
+      <div>
+        <input [(ngModel)]="car.serviceDate" placeholder="car">
+      </div>
+    </div>
+    <div>
+      <label>Numer Rejestracyjny: </label>
+      <div>
+        <input [(ngModel)]="car.regNumber" placeholder="car">
+      </div>
+    </div>
+    <div>
+      <label>Wlasciciel: </label>
+      <div>
+        <input [(ngModel)]="car.owner" placeholder="car">
+      </div>
+    </div>
+  </div>
 
-</div>
-<div>
-  <label>Model: {{car.model}}</label>
-  <div>
-    <input [(ngModel)]="car.model" placeholder="car">
+
+
+  <div class="carDetails">
+    <app-repair-list [id]="car.id"></app-repair-list>
   </div>
 </div>
-<div>
-  <label>Silnik: {{car.engine}}</label>
-  <div>
-    <input [(ngModel)]="car.engine" placeholder="car">
-  </div>
-</div>
-<div>
-  <label>Rok Produkcji: {{car.year}}</label>
-  <div>
-    <input [(ngModel)]="car.year" placeholder="car">
-  </div>
-</div>
-<div>
-  <label>Data Badania Technicznego: {{car.serviceDate}}</label>
-  <div>
-    <input [(ngModel)]="car.serviceDate" placeholder="car">
-  </div>
-</div>
-<div>
-  <label>Numer Rejestracyjny: {{car.regNumber}}</label>
-  <div>
-    <input [(ngModel)]="car.regNumber" placeholder="car">
-  </div>
-</div>
-<div>
-  <label>Wlasciciel: {{car.owner}}</label>
-  <div>
-    <input [(ngModel)]="car.owner" placeholder="car">
-  </div>
-</div>
-<div>
-  <button (click)="showRepairs()">Pokaz Naprawy</button>
-</div>
-<app-repair-list *ngIf="repairsVisible == true" [id]="car.id"></app-repair-list>
