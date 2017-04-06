@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { CARS } from '../car.mock';
 import { Car } from '../car';
 import { CarService } from '../car.service';
@@ -11,7 +12,7 @@ export class CarListComponent implements OnInit {
   selectedCar: Car;
   addCar = 0;
   cars: Car[];
-  constructor(private carService: CarService) { }
+  constructor(private carService: CarService, private _route: Router) { }
 
   ngOnInit() {
     console.log('laduj fury');
@@ -25,14 +26,9 @@ export class CarListComponent implements OnInit {
 
   }
   selectAddCar() {
-    console.log('selectedCarr');
 
-    if (this.addCar === 0) {
-      this.addCar = 1;
-    }
-    else {
-      this.addCar = 0;
-    }
+    this._route.navigate(['/addCar']);
+
   }
   addCarHandle(car: Car) {
     console.log('addCarhandler');

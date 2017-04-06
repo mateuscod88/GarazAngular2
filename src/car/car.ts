@@ -9,5 +9,6 @@ export class Car {
     owner: string;
     fuel: string;
     phone: string;
+    VIN: string;
 }
 

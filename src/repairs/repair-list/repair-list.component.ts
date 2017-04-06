@@ -10,12 +10,15 @@ import { Repair } from '../repair';
 export class RepairListComponent implements OnInit, OnChanges {
   repairs: Repair[];
   selectedRepair: Repair;
-  constructor(private repairService: RepairService) { console.log('konstruktor'); }
+  constructor(private repairService: RepairService) {
+    console.log('konstruktor');
+    console.log(this.ide);
+  }
 
-  @Input() id: number;
+  @Input() ide: number;
   ngOnInit() {
     console.log('Repairlist');
-    this.repairService.getRepairsByCarId(this.id).then(repair => this.repairs = repair);
+    this.repairService.getRepairsByCarId(this.ide).then(repair => this.repairs = repair);
   }
   ngOnChanges(changes: SimpleChanges) {
     console.log('change');

@@ -1,55 +1,62 @@
 <div>
-  <label>Marka:  </label>
-  <div>
-    <input [(ngModel)]="car.brand" placeholder="car">
-  </div>
-</div>
-<div>
-  <label>Model: </label>
-  <div>
-    <input [(ngModel)]="car.model" placeholder="car">
-  </div>
-</div>
-<div>
-  <label>Silnik: </label>
-  <div>
-    <input [(ngModel)]="car.engine" placeholder="car">
-  </div>
-</div>
-<div>
-  <label>Rok Produkcji: </label>
-  <div>
-    <input [(ngModel)]="car.year" placeholder="car">
-  </div>
-</div>
-<div>
-  <label>Data Badania Technicznego: </label>
-  <div>
-    <input [(ngModel)]="car.serviceDate" placeholder="car">
-  </div>
-</div>
-<div>
-  <label>Numer Rejestracyjny: </label>
-  <div>
-    <input [(ngModel)]="car.regNumber" placeholder="car">
-  </div>
-</div>
-<div>
-  <label>Paliwo: </label>
-  <div>
-    <input [(ngModel)]="car.fuel" placeholder="car">
-  </div>
-</div>
-<div>
-  <label>Numer Telefonu: </label>
-  <div>
-    <input [(ngModel)]="car.phone" placeholder="car">
-  </div>
-</div>
-<div>
-  <label>Wlasciciel: </label>
-  <div>
-    <input [(ngModel)]="car.owner" placeholder="car">
+  <div class="carDetails">
+    <div>
+      <label>Marka:  </label>
+      <div>
+        <select [(ngModel)]="car.brand">
+          <option *ngFor="let brand of brands" [value]="brand.name">{{brand.name}}</option>
+        </select>
+
+      </div>
+    </div>
+    <div>
+      <label>Model: </label>
+      <div>
+        <select [(ngModel)]="car.model">
+          <option *ngFor="let model of models" [value]="model.name">{{model.name}}</option>
+        </select>
+
+      </div>
+    </div>
+    <div>
+      <label>Silnik:</label>
+      <div>
+        <input [(ngModel)]="car.engine" placeholder="car">
+      </div>
+    </div>
+    <div>
+      <label>Rok Produkcji: </label>
+      <div>
+        <input [(ngModel)]="car.year" placeholder="car">
+      </div>
+    </div>
+    <div>
+      <label>Data Badania Technicznego: </label>
+      <div>
+        <input [(ngModel)]="car.serviceDate" placeholder="car">
+      </div>
+    </div>
+    <div>
+      <label>Numer Rejestracyjny: </label>
+      <div>
+        <input [(ngModel)]="car.regNumber" placeholder="car">
+      </div>
+    </div>
+    <div>
+      <label>Wlasciciel: </label>
+      <div>
+
+        <select [(ngModel)]="car.owner">
+          <option *ngFor="let owner of owners" [value]="owner.firstName +' '+ owner.lastName">{{owner.firstName}} {{owner.lastName}}</option>
+        </select>
+      </div>
+    </div>
+    <div>
+      <label>Numer VIN: </label>
+      <div>
+        <input [(ngModel)]="car.VIN" placeholder="car">
+      </div>
+    </div>
   </div>
 
 </div>

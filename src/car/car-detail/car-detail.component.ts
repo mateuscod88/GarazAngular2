@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { Car } from '../car';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-car-detail',
@@ -18,14 +19,22 @@ export class CarDetailComponent implements OnInit {
     year: '2004',
     owner: 'Wojciech M',
     fuel: 'diesel',
-    phone: '513555233'
+    phone: '513555233',
+    VIN: ''
   };
   @Input() car: Car;
+  @Input() id: number;
+  constructor(private _route: ActivatedRoute) {
+    console.log('Activated Route');
 
-  constructor() { }
+    console.log(this._route.snapshot.params['id']);
+    this.id = +this._route.snapshot.params['id'];
+  }
 
   ngOnInit() {
-    console.log(this.car.id.toString());
+    this.car = this.carAudi;
+    // console.log(this.car.id.toString());
+    // console.log(this.id.toString());
   }
   showRepairs() {
     if (this.repairsVisible === false) {

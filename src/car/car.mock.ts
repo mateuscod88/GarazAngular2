@@ -3,14 +3,15 @@ import { Car } from './car';
 export const CARS: Car[] = [{
     id: 1,
     brand: 'Audi',
-    model: 'A4',
+    model: 'A6',
     engine: '1.9TDI',
     regNumber: 'BIA666',
     serviceDate: '16-03-2017',
     year: '2004',
     owner: 'Wojciech M',
     fuel: 'diesel',
-    phone: '607-352-244'
+    phone: '607-352-244',
+    VIN: ''
 },
 {
     id: 2,
@@ -23,11 +24,13 @@ export const CARS: Car[] = [{
     owner: 'Wojciech M',
     fuel: 'diesel',
     phone: '607-352-244'
+    ,
+    VIN: ''
 },
 {
     id: 3,
-    brand: 'Audi',
-    model: 'A4',
+    brand: 'Vw',
+    model: 'Passat',
     engine: '1.9TDI',
     regNumber: 'BIA666',
     serviceDate: '16-03-2017',
@@ -35,19 +38,22 @@ export const CARS: Car[] = [{
     owner: 'Wojciech M',
     fuel: 'diesel',
     phone: '607-352-244'
+    ,
+    VIN: ''
 }
     ,
 {
     id: 4,
-    brand: 'Audi',
-    model: 'A4',
+    brand: 'Skoda',
+    model: 'Ovtavia',
     engine: '1.9TDI',
     regNumber: 'BIA666',
     serviceDate: '16-03-2017',
     year: '2004',
     owner: 'Wojciech M',
     fuel: 'diesel',
-    phone: '607-352-244'
+    phone: '607-352-244',
+    VIN: ''
 },
 {
     id: 5,
@@ -59,7 +65,8 @@ export const CARS: Car[] = [{
     year: '2004',
     owner: 'Wojciech M',
     fuel: 'diesel',
-    phone: '607-352-244'
+    phone: '607-352-244',
+    VIN: ''
 }
     ,
 {
@@ -72,7 +79,8 @@ export const CARS: Car[] = [{
     year: '2004',
     owner: 'Wojciech M',
     fuel: 'diesel',
-    phone: '607-352-244'
+    phone: '607-352-244',
+    VIN: ''
 },
 {
     id: 7,
@@ -84,6 +92,7 @@ export const CARS: Car[] = [{
     year: '2004',
     owner: 'Wojciech M',
     fuel: 'diesel',
-    phone: '607-352-244'
+    phone: '607-352-244',
+    VIN: ''
 }
 ];
