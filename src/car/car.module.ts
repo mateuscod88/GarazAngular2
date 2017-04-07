@@ -7,12 +7,14 @@ import { FormsModule } from '@angular/forms';
 import { Car } from './car';
 import { CarService } from './car.service';
 import { RepairsModule } from '../repairs/repairs.module';
+import { DatePickerModule } from 'ng2-datepicker';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     RepairsModule,
+    DatePickerModule
 
   ],
   exports: [

@@ -43,7 +43,8 @@
     <div>
       <label>Data Badania Technicznego: </label>
       <div>
-        <input [(ngModel)]="car.serviceDate" placeholder="car">
+        <!--<input [(ngModel)]="car.serviceDate" placeholder="car">-->
+        <ng2-datepicker [options]="options" [(ngModel)]="date"></ng2-datepicker>
       </div>
     </div>
     <div>
