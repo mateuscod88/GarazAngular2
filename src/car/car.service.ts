@@ -3,6 +3,7 @@ import { CARS } from '../car/car.mock';
 import { OWNERS } from '../mocki/owner.mock';
 import { BRANDS } from '../mocki/brand.mock';
 import { MODELS } from '../mocki/model.mock';
+import { YEARS } from '../mocki/year.mock';
 import * as Enumerable from 'linq';
 @Injectable()
 export class CarService {
@@ -19,6 +20,14 @@ export class CarService {
   }
   getModels() {
     return Promise.resolve(MODELS);
+  }
+  getModelByBrand(id: number) {
+    console.log(id);
+    return Promise.resolve(Enumerable.from(MODELS).where(x => x.brandId === id).toArray());
+  }
+  getYears() {
+    return Promise.resolve(YEARS);
+
   }
   create(brand: string, model: string, engine: string, year: string, serviceDate: string,
     regNumber: string, owner: string, fuel: string, phone: string, VIN: string) {
