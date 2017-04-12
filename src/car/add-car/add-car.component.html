@@ -5,7 +5,7 @@
       <div>
 
 
-        <select [(ngModel)]="selectedBrand" (change)="onChange($event)">
+        <select [(ngModel)]="car.brand" (change)="onChange($event)">
            <option [ngValue]="undefined" >Select</option>
          
           <option *ngFor="let brand of brands" [value]="brand.id"   >{{brand.name}}</option>
@@ -33,7 +33,7 @@
     <div>
       <label>Rok Produkcji: </label>
       <div>
-        <select [(ngModel)]="selectedYear">
+        <select [(ngModel)]="car.year">
            <option [ngValue]="undefined" >Select</option>
           
           <option *ngFor="let year of years" [value]="year.name">{{year.name}}</option>
@@ -59,7 +59,7 @@
 
         <select [(ngModel)]="car.owner">
           <option [ngValue]="undefined">Select</option>
-          <option *ngFor="let owner of owners" [value]="owner.firstName +' '+ owner.lastName">{{owner.firstName}} {{owner.lastName}}</option>
+          <option *ngFor="let owner of owners" [value]="owner.id">{{owner.name}} {{owner.lastName}}</option>
         </select>
       </div>
     </div>

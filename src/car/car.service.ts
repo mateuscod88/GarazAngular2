@@ -29,8 +29,8 @@ export class CarService {
     return Promise.resolve(YEARS);
 
   }
-  create(brand: string, model: string, engine: string, year: string, serviceDate: string,
-    regNumber: string, owner: string, fuel: string, phone: string, VIN: string) {
+  create(brand: number, model: string, engine: string, year: string, serviceDate: string,
+    regNumber: string, owner: number, fuel: string, phone: string, VIN: string) {
     let enumerableCars = Enumerable.from(CARS);
     let id = enumerableCars.any() ? Enumerable.from(CARS).max(item => item.id) + 1 : 0;
     CARS.push({ id, brand, model, engine, fuel, owner, phone, regNumber, serviceDate, year, VIN });

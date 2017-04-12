@@ -13,20 +13,15 @@ import { CarListComponent } from '../car/car-list/car-list.component';
 import { CarDetailComponent } from '../car/car-detail/car-detail.component';
 import { AddCarComponent } from '../car/add-car/add-car.component';
 import { Router } from '@angular/router';
-import { OwnerComponent } from './owner/owner.component';
-import { OwnerListComponent } from './owner-list/owner-list.component';
-import { OwnerDetailsComponent } from './owner-details/owner-details.component';
-import { OwnerAddComponent } from './owner-add/owner-add.component';
-
+import { OwnerListComponent } from '../owner/owner-list/owner-list.component';
+import { OwnerModule } from '../owner/owner.module';
+import { OwnerAddComponent } from '../owner/owner-add/owner-add.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    OwnerComponent,
-    OwnerListComponent,
-    OwnerDetailsComponent,
-    OwnerAddComponent,
+
 
   ],
   imports: [
@@ -34,11 +29,14 @@ import { OwnerAddComponent } from './owner-add/owner-add.component';
     FormsModule,
     HttpModule,
     CarModule,
+    OwnerModule,
     RepairsModule,
     RouterModule.forRoot([
       { path: 'carList', component: CarListComponent },
       { path: 'carDetail/:id', component: CarDetailComponent },
-      { path: 'addCar', component: AddCarComponent }
+      { path: 'addCar', component: AddCarComponent },
+      { path: 'ownerList', component: OwnerListComponent },
+      { path: 'addOwner', component: OwnerAddComponent }
     ])
   ],
   providers: [],

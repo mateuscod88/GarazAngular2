@@ -1,3 +1,25 @@
 <p>
   owner-list works!
 </p>
+<table>
+  <tr>
+    <th>Imie:</th>
+    <th>Nazwisko:</th>
+    <th>Telefon</th>
+    <th>Nr dowodu osobistego</th>
+  </tr>
+
+  <tr *ngFor="let owner of owners" [ngClass]="{ active: (selectedOwner && owner.id === selectedOwner.id) }" (click)="selectOwner(owner)">
+    <td>{{owner.name}}</td>
+    <td>{{owner.lastName}}</td>
+    <td>{{owner.phone}}</td>
+    <td>{{owner.idDocument}}</td>
+  </tr>
+
+
+</table>
+<div>
+  <button (click)="addOwner()">Dodaj Użytkownika</button>
+
+
+</div>

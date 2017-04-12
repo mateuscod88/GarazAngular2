@@ -1,12 +1,12 @@
 export class Car {
     id: number;
-    brand: string;
+    brand: number;
     model: string;
     engine: string;
     year: string;
     serviceDate: string;
     regNumber: string;
-    owner: string;
+    owner: number;
     fuel: string;
     phone: string;
     VIN: string;

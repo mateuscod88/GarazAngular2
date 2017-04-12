@@ -1,3 +1,75 @@
 <p>
   owner-add works!
 </p>
+<form #heroForm="ngForm">
+  <div>
+    <label>Imię </label>
+    <input [(ngModel)]="owner.name" placeholder="Imie" type="text" id="name" class="form-control" required minlength="4" maxlength="24"
+      forbiddenName="bobek" name="name" #name="ngModel">
+    <div *ngIf="name.errors && (name.dirty || name.touched)">
+      <div [hidden]="!name.errors.required">
+        Name is required
+      </div>
+      <div [hidden]="!name.errors.minlength">
+        Name must be at least 4 characters long.
+      </div>
+      <div [hidden]="!name.errors.maxlength">
+        Name cannot be more than 24 characters long.
+      </div>
+
+    </div>
+  </div>
+
+  <div>
+    <label>Nazwisko:</label>
+    <input [(ngModel)]="owner.lastName" placeholder="Nazwisko" type="text" id="lastName" class="form-control" required minlength="4"
+      maxlength="24" forbiddenName="bobek" name="lastName" #lastName="ngModel">
+    <div *ngIf="lastName.errors && (lastName.dirty || lastName.touched)">
+      <div [hidden]="!lastName.errors.required">
+        Last Name is required
+      </div>
+      <div [hidden]="!lastName.errors.minlength">
+        Last Name must be at least 4 characters long.
+      </div>
+      <div [hidden]="!lastName.errors.maxlength">
+        Last Name cannot be more than 24 characters long.
+      </div>
+    </div>
+  </div>
+  <div>
+    <label>Telefon:</label>
+    <input [(ngModel)]="owner.phone" placeholder="Tel" type="text" id="phone" class="form-control" name="phone" #idDocument="ngModel">
+    <!--<div *ngIf="name.errors && (name.dirty || name.touched)">
+      <div [hidden]="!name.errors.required">
+        Name is required
+      </div>
+      <div [hidden]="!name.errors.minlength">
+        Name must be at least 4 characters long.
+      </div>
+      <div [hidden]="!name.errors.maxlength">
+        Name cannot be more than 24 characters long.
+      </div>
+    </div>-->
+  </div>
+  <div>
+    <label>Nr dowodu:</label>
+
+    <input [(ngModel)]="owner.idDocument" placeholder="nr Dowodu" type="text" id="idDocument" class="form-control" name="idDocument"
+      #idDocument="ngModel">
+    <!--<div *ngIf="name.errors && (name.dirty || name.touched)">
+      <div [hidden]="!name.errors.required">
+        Name is required
+      </div>
+      <div [hidden]="!name.errors.minlength">
+        Name must be at least 4 characters long.
+      </div>
+      <div [hidden]="!name.errors.maxlength">
+        Name cannot be more than 24 characters long.
+      </div>
+    </div>-->
+  </div>
+</form>
+<div>
+
+  <button (click)="addUser()" [disabled]="!heroForm.valid">Dodaj Użytkownika</button>
+</div>
