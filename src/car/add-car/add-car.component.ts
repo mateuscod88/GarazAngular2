@@ -6,6 +6,7 @@ import { Owner } from '../../mocki/owner';
 import { Brand } from '../../mocki/brand';
 import { Model } from '../../mocki/model';
 import { Year } from '../../mocki/year';
+import { DatePickerOptions, DateModel } from 'ng2-datepicker';
 @Component({
   selector: 'app-add-car',
   templateUrl: './add-car.component.html',
@@ -19,8 +20,12 @@ export class AddCarComponent implements OnInit {
   brands: Brand[];
   models: Model[];
   years: Year[];
+  date: DateModel;
+  options: DatePickerOptions;
   @Output() addNewCarEvent = new EventEmitter<Car>();
-  constructor(private _route: Router, private _carService: CarService) { }
+  constructor(private _route: Router, private _carService: CarService) { 
+    this.options = new DatePickerOptions();
+  }
 
   ngOnInit() {
     this._carService.getOwners().then(owners => this.owners = owners);
