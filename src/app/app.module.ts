@@ -13,12 +13,20 @@ import { CarListComponent } from '../car/car-list/car-list.component';
 import { CarDetailComponent } from '../car/car-detail/car-detail.component';
 import { AddCarComponent } from '../car/add-car/add-car.component';
 import { Router } from '@angular/router';
+import { OwnerComponent } from './owner/owner.component';
+import { OwnerListComponent } from './owner-list/owner-list.component';
+import { OwnerDetailsComponent } from './owner-details/owner-details.component';
+import { OwnerAddComponent } from './owner-add/owner-add.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    OwnerComponent,
+    OwnerListComponent,
+    OwnerDetailsComponent,
+    OwnerAddComponent,
 
   ],
   imports: [
