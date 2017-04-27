@@ -1,3 +1,31 @@
 <p>
   repair-add works!
 </p>
+<div>
+
+  <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Nazwa Naprawy:</span>
+    <input [(ngModel)]="repair.name" placeholder="nazwa" type="text" class="form-control" aria-describedby="sizing-addon1">
+  </div>
+  <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Data Naprawy:</span>
+    <ng2-datepicker [options]="options" [(ngModel)]="repair.date" class="form-control"></ng2-datepicker>
+  </div>
+
+  <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Kategoria:</span>
+
+
+
+    <select [(ngModel)]="repairCategoryId" class="form-control" aria-describedby="sizing-addon1">
+          <option [ngValue]="undefined">Select</option>
+          <option *ngFor="let category of categoryes" [value]="category.id">{{category.name}}</option>
+        </select>
+
+  </div>
+
+
+</div>
+<div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default" (click)="add()">Dodaj Naprawe</button>
+</div>

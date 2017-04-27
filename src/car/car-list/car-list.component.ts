@@ -22,6 +22,7 @@ export class CarListComponent implements OnInit {
   selectCar(car: Car) {
     console.log('selectedCarr');
     this.selectedCar = car;
+    this._route.navigate(['/carDetail', car.id]);
     console.log(this.selectedCar.id.toString());
 
   }

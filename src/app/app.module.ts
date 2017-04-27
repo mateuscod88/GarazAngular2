@@ -36,7 +36,8 @@ import { OwnerAddComponent } from '../owner/owner-add/owner-add.component';
       { path: 'carDetail/:id', component: CarDetailComponent },
       { path: 'addCar', component: AddCarComponent },
       { path: 'ownerList', component: OwnerListComponent },
-      { path: 'addOwner', component: OwnerAddComponent }
+      { path: 'addOwner', component: OwnerAddComponent },
+      { path: 'addRepair/:id', component: RepairAddComponent }
     ])
   ],
   providers: [],

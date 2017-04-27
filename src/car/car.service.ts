@@ -12,11 +12,23 @@ export class CarService {
   getCars() {
     return Promise.resolve(CARS);
   }
+  getCarById(id: number) {
+    console.log('getCarByIdd');
+
+    console.log(id);
+
+    return Promise.resolve(Enumerable.from(CARS).where(x => x.id === id).firstOrDefault());
+
+  }
+
   getOwners() {
     return Promise.resolve(OWNERS);
   }
   getBrands() {
     return Promise.resolve(BRANDS);
+  }
+  getBrandById(id: number) {
+    return Promise.resolve(Enumerable.from(BRANDS).where(x => x.id === id).firstOrDefault());
   }
   getModels() {
     return Promise.resolve(MODELS);

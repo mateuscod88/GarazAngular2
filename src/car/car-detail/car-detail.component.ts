@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { Car } from '../car';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CarService } from '../car.service';
 
 @Component({
   selector: 'app-car-detail',
@@ -9,31 +10,34 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CarDetailComponent implements OnInit {
   repairsVisible: boolean = false;
-  carAudi: Car = {
-    id: 1,
-    brand: 1,
-    model: 'A4',
-    engine: '1.9TDI',
-    regNumber: 'BIA666',
-    serviceDate: '16-03-2017',
-    year: '2004',
-    owner: 1,
-    fuel: 'diesel',
-    phone: '513555233',
+
+  car: Car = {
+    id: 0,
+    brand: 0,
+    model: '',
+    engine: '',
+    year: '',
+    serviceDate: '',
+    regNumber: '',
+    owner: 0,
+    fuel: '',
+    phone: '',
     VIN: ''
   };
-  @Input() car: Car;
   @Input() id: number;
-  constructor(private _route: ActivatedRoute) {
+  constructor(private _route: ActivatedRoute, private _carService: CarService, private _router: Router) {
     console.log('Activated Route');
 
     console.log(this._route.snapshot.params['id']);
     this.id = +this._route.snapshot.params['id'];
+
   }
 
   ngOnInit() {
-    this.car = this.carAudi;
-    // console.log(this.car.id.toString());
+    this._carService.getCarById(this.id).then(car => this.car = car);
+    console.log('ngOnInit_');
+    console.log(this.car);
+    // coconsole.log(this._route.snapshot.params['id']);nsole.log(this.car.id.toString());
     // console.log(this.id.toString());
   }
   showRepairs() {
@@ -45,6 +49,10 @@ export class CarDetailComponent implements OnInit {
     }
     console.log(this.repairsVisible);
     console.log(this.car.id);
+  }
+  addRepair() {
+    console.log('Dodaj Naprawe');
+    this._router.navigate(['/addRepair', this.id]);
   }
 
 
