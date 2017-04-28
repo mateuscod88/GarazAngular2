@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { RepairService } from '../repair.service';
 import { Repair } from '../repair';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-repair-list',
   templateUrl: './repair-list.component.html',
@@ -10,7 +10,7 @@ import { Repair } from '../repair';
 export class RepairListComponent implements OnInit, OnChanges {
   repairs: Repair[];
   selectedRepair: Repair;
-  constructor(private repairService: RepairService) {
+  constructor(private repairService: RepairService, private _router: Router) {
     console.log('konstruktor');
     console.log(this.ide);
   }
@@ -28,25 +28,22 @@ export class RepairListComponent implements OnInit, OnChanges {
       let cur = JSON.stringify(chng.currentValue);
       let prev = JSON.stringify(chng.previousValue);
       tempCar = cur;
-
     }
     let carRepId = +tempCar;
     if (Number.isInteger(carRepId)) {
       this.repairService.getRepairsByCarId(carRepId).then(repair => this.repairs = repair);
     }
-
     console.log('end onCh');
-
   }
   selectRepair(selRepair: Repair) {
-    if (!(this.selectedRepair.id === selRepair.id)) {
-      this.selectedRepair = selRepair;
-      console.log(this.selectRepair.toString());
-    }
+    console.log(selRepair);
+    console.log(this.selectedRepair);
+    this.selectedRepair = selRepair;
+    this._router.navigate(['repairDetail', this.selectedRepair.id]);
+
   }
   selectCarHandle(carId: number) {
     console.log('Handle');
-
     this.repairService.getRepairsByCarId(carId).then(repair => this.repairs = repair);
   }
 

@@ -6,7 +6,7 @@
 
     </tr>
 
-    <tr *ngFor="let repair of repairs" [ngClass]="{ active: (selectedRepair && repair.id === selectedRepair.id) }" (click)="selectRepair(repair)">
+    <tr *ngFor="let repair of repairs" [ngClass]="{ active: (selectedRepair && repair.id === selectedRepair.id) }" (dblclick)="selectRepair(repair)">
       <td>{{repair.name}}</td>
       <td>{{repair.date}}</td>
     </tr>

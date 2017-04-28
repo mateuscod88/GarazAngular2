@@ -6,5 +6,6 @@ export class Repair {
     name: string;
     parts: Part[];
     date: string;
+    details: string;
 
 }

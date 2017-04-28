@@ -9,7 +9,7 @@
   </div>
   <div class="input-group input-group-lg">
     <span class="input-group-addon" id="sizing-addon1">Data Naprawy:</span>
-    <ng2-datepicker [options]="options" [(ngModel)]="repair.date" class="form-control"></ng2-datepicker>
+    <ng2-datepicker [options]="options" [(ngModel)]="date" class="form-control"></ng2-datepicker>
   </div>
 
   <div class="input-group input-group-lg">
@@ -23,6 +23,14 @@
         </select>
 
   </div>
+
+  <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Opis:</span>
+    <textarea [(ngModel)]="repair.details" name="thetext" rows="20" cols="80">
+   
+  </textarea>
+  </div>
+
 
 
 </div>
