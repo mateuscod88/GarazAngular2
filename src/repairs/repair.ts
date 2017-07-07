@@ -4,7 +4,6 @@ export class Repair {
     carId: number;
     categoryId: number;
     name: string;
-    parts: Part[];
     date: string;
     details: string;
 

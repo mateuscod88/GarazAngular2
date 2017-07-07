@@ -4,8 +4,6 @@ export const REPAIRS: Repair[] = [{
     carId: 2,
     categoryId: 1,
     name: 'Rozrzad',
-
-    parts: [{ id: 1, name: 'rozrzad', price: 100 }],
     date: '22-09-2016',
     details: ''
 },
@@ -14,7 +12,6 @@ export const REPAIRS: Repair[] = [{
     carId: 2,
     categoryId: 1,
     name: 'Rozrzad',
-    parts: [{ id: 1, name: 'rozrzad', price: 100 }],
     date: '22-09-2016',
     details: ''
 },
@@ -24,7 +21,6 @@ export const REPAIRS: Repair[] = [{
     categoryId: 1,
 
     name: 'Rozrzad',
-    parts: [{ id: 1, name: 'rozrzad', price: 100 }],
     date: '22-09-2016',
     details: ''
 },
@@ -34,7 +30,6 @@ export const REPAIRS: Repair[] = [{
     categoryId: 1,
 
     name: 'Rozrzad',
-    parts: [{ id: 1, name: 'rozrzad', price: 100 }],
     date: '22-09-2016',
     details: ''
 },
@@ -44,7 +39,6 @@ export const REPAIRS: Repair[] = [{
     categoryId: 1,
 
     name: 'Wahacze',
-    parts: [{ id: 1, name: 'wahacz', price: 100 }],
     date: '22-09-2016',
     details: ''
 },
@@ -54,7 +48,6 @@ export const REPAIRS: Repair[] = [{
     categoryId: 2,
 
     name: 'Olej',
-    parts: [{ id: 1, name: 'Olej', price: 100 }],
     date: '22-09-2016',
     details: ''
 }];

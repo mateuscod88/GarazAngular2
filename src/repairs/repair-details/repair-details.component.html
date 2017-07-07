@@ -2,28 +2,23 @@
 
   <div class="input-group input-group-lg">
     <span class="input-group-addon" id="sizing-addon1">Nazwa Naprawy:</span>
-    <input [(ngModel)]="repair.name" placeholder="nazwa" type="text" class="form-control" aria-describedby="sizing-addon1" disabled>
+    <input [(ngModel)]="repairViewModel.name" placeholder="nazwa" type="text" class="form-control" aria-describedby="sizing-addon1"
+      disabled>
   </div>
   <div class="input-group input-group-lg">
     <span class="input-group-addon" id="sizing-addon1">Data Naprawy:</span>
-    <ng2-datepicker [options]="options" [(ngModel)]="repair.date" class="form-control" disabled></ng2-datepicker>
+    <ng2-datepicker [options]="options" [(ngModel)]="repairViewModel.date" class="form-control" data-ng-disabled="true"></ng2-datepicker>
   </div>
 
-  <!--<div class="input-group input-group-lg">
+  <div class="input-group input-group-lg">
     <span class="input-group-addon" id="sizing-addon1">Kategoria:</span>
-
-
-
-    <select [(ngModel)]="repairCategoryId" class="form-control" aria-describedby="sizing-addon1">
-          <option [ngValue]="undefined">Select</option>
-          <option *ngFor="let category of categoryes" [value]="category.id">{{category.name}}</option>
-        </select>
-
-  </div>-->
+    <input [(ngModel)]="repairViewModel.categoryName" placeholder="nazwa" type="text" class="form-control" aria-describedby="sizing-addon1"
+      disabled>
+  </div>
 
   <div class="input-group input-group-lg">
     <span class="input-group-addon" id="sizing-addon1">Opis:</span>
-    <textarea [(ngModel)]="repair.details" name="thetext" rows="20" cols="80" disabled>
+    <textarea [(ngModel)]="repairViewModel.details" name="thetext" rows="20" cols="80" disabled>
    
   </textarea>
   </div>
@@ -32,6 +27,6 @@
 
 </div>
 <div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default" (click)="save()">Save</button><button type="button" class="btn btn-default"
-    (click)="back()">Back</button>
+  <!--<button type="button" class="btn btn-default" (click)="save()">Save</button>-->
+  <button type="button" class="btn btn-default" (click)="back()">Back</button>
 </div>

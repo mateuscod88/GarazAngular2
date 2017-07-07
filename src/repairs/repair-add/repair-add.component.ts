@@ -19,7 +19,6 @@ export class RepairAddComponent implements OnInit {
     categoryId: 0,
     carId: 0,
     name: '',
-    parts: [{ id: 1, name: 'zestaw rozrzadu', price: 22 }],
     date: '',
     details: 'Wpisz opis Naprawy.'
   };
@@ -38,12 +37,11 @@ export class RepairAddComponent implements OnInit {
   ngOnInit() {
   }
   add() {
+    debugger;
     console.log('Add Naprawe');
     console.log(this.repair.carId);
-
-
     console.log(this.date.formatted);
-    this._repairService.create(this.repair.carId, this.repairCategoryId, this.repair.name, this.repair.parts, this.date.formatted, this.repair.details);
+    this._repairService.create(this.repair.carId, this.repairCategoryId, this.repair.name, this.date.formatted, this.repair.details);
     this._router.navigate(['/carDetail', this.repair.carId]);
 
   }
