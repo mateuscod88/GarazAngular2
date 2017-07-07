@@ -5,11 +5,11 @@
 
   <div class="input-group input-group-lg">
     <span class="input-group-addon" id="sizing-addon1">Nazwa Naprawy:</span>
-    <input [(ngModel)]="repair.name" placeholder="nazwa" type="text" class="form-control" aria-describedby="sizing-addon1">
+    <input [(ngModel)]="repairViewModel.name" placeholder="nazwa" type="text" class="form-control" aria-describedby="sizing-addon1">
   </div>
   <div class="input-group input-group-lg">
     <span class="input-group-addon" id="sizing-addon1">Data Naprawy:</span>
-    <ng2-datepicker [options]="options" [(ngModel)]="date" class="form-control"></ng2-datepicker>
+    <ng2-datepicker [options]="options" [(ngModel)]="repairViewModel.date" class="form-control"></ng2-datepicker>
   </div>
 
   <div class="input-group input-group-lg">
@@ -17,16 +17,16 @@
 
 
 
-    <select [(ngModel)]="repairCategoryId" class="form-control" aria-describedby="sizing-addon1">
+    <select [(ngModel)]="repairViewModel.categoryId" class="form-control" aria-describedby="sizing-addon1">
           <option [ngValue]="undefined">Select</option>
-          <option *ngFor="let category of categoryes" [value]="category.id">{{category.name}}</option>
+          <option *ngFor="let category of repairViewModel.categorys" [value]="category.id">{{category.name}}</option>
         </select>
 
   </div>
 
   <div class="input-group input-group-lg">
     <span class="input-group-addon" id="sizing-addon1">Opis:</span>
-    <textarea [(ngModel)]="repair.details" name="thetext" rows="20" cols="80">
+    <textarea [(ngModel)]="repairViewModel.details" name="thetext" rows="20" cols="80">
    
   </textarea>
   </div>

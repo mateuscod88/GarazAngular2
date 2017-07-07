@@ -20,6 +20,9 @@ export class RepairService {
   getRepairCategoryById(id: number) {
     return Promise.resolve(Enumerable.from(CATEGORY).where(category => id === category.id).firstOrDefault());
   }
+  getCategorys() {
+    return Promise.resolve(CATEGORY);
+  }
   getPartsByRepairId(id: number) {
     return Promise.resolve(Enumerable.from(PARTS).where(x => x.repairId === id).toArray());
   }

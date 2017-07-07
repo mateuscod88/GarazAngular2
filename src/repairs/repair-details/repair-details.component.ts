@@ -12,7 +12,16 @@ import * as moment from 'moment';
 })
 export class RepairDetailsComponent implements OnInit {
   @Input() id: number;
-  repairViewModel: RepairViewModel;
+  repairViewModel: RepairViewModel =
+  {
+    id: 0,
+    carId: 0,
+    categoryName: '',
+    date: undefined,
+    details: '',
+    name: '',
+    parts: undefined
+  };
   repair: Repair;
   date: DateModel;
   options: DatePickerOptions;
@@ -34,16 +43,16 @@ export class RepairDetailsComponent implements OnInit {
     console.log('REPAIR END');
 
   }
-  save() {
+  back() {
     this._router.navigate(['/carDetail', this.repair.carId]);
   }
   GetAllRepairDetails() {
     this._repairService.getRepairById(this.id).then(repair => {
       debugger;
       this.repair = repair;
-      this.repairViewModel = new RepairViewModel();
+
       this.repairViewModel.carId = repair.carId;
-      this._repairService.getRepairCategoryById(repair.categoryId).then(category => {
+      this._repairService.getRepairCategoryById(Number(repair.categoryId)).then(category => {
         debugger;
         this.repairViewModel.categoryName = category.name;
       });
