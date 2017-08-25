@@ -1,14 +1,15 @@
-export class Car {
+export class CarViewModel {
     id: number;
-    brand: number;
+    brand: string;
+    brandId:number
     model: string;
     engine: string;
     year: string;
     serviceDate: string;
     regNumber: string;
-    owner: number; 
+    owner: string;
+    ownerId:number; 
     fuel: string;
     phone: string;
     VIN: string;
 }
-

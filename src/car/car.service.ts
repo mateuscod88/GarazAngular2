@@ -24,6 +24,9 @@ export class CarService {
   getOwners() {
     return Promise.resolve(OWNERS);
   }
+  getOwnerById(id: number){
+    return Promise.resolve(Enumerable.from(OWNERS).where(x => x.id === id).firstOrDefault());
+  }
   getBrands() {
     return Promise.resolve(BRANDS);
   }
